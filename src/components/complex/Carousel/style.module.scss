@@ -1,0 +1,102 @@
+.carousel {
+  --card-height: 220px;
+  --card-width: 330px;
+  --cards-shift: 0px;
+  --dot-width: 40px;
+  --dots-shift: 0px;
+
+  overflow: hidden;
+  width: var(--card-width); /* visible card */
+
+  .card_container {
+    overflow: hidden;
+    position: relative;
+    height: var(--card-height);
+    border-radius: 30px;
+
+    .icon_forward {
+      position: relative;
+      z-index: 2;
+      left: calc(100% - 90px);
+      top: calc(100% - 50px);
+    }
+
+    .card_carousel {
+      position: absolute;
+      z-index: 1;
+      left: var(--cards-shift);
+
+      display: flex;
+      width: fit-content;
+      height: 100%;
+
+      transition: left 0.2s ease-out 0s;
+
+      .card {
+        width: var(--card-width);
+        height: 100%;
+
+        &:nth-of-type(even) {
+          background: #eee;
+        }
+        &:nth-of-type(odd) {
+          background: #ddd;
+        }
+      }
+    }
+
+    .arrows {
+      position: absolute;
+      z-index: 11;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+
+      .arrow {
+        position: absolute;
+        top: calc(50% - 15px);
+        cursor: pointer;
+        transform: scale(1.5);
+
+        &.left {
+          left: 15px;
+        }
+
+        &.right {
+          right: 15px;
+        }
+      }
+    }
+  }
+
+  .dots {
+    position: relative;
+    left: var(--dots-shift);
+    display: flex;
+    justify-content: center;
+
+    .dot {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      vertical-align: middle;
+      line-height: 20px;
+      font-family: 'Times';
+      font-size: 40px;
+      width: var(--dot-width);
+      min-width: var(--dot-width);
+      max-width: var(--dot-width);
+      cursor: pointer;
+      user-select: none;
+
+      &:hover:not(.active) {
+        font-size: 60px;
+      }
+
+      &.active {
+        font-size: 80px;
+      }
+    }
+  }
+}

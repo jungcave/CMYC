@@ -1,0 +1,115 @@
+.grid_card {
+  height: fit-content;
+  width: auto;
+
+  .content {
+    display: grid;
+    grid-template-areas:
+      'a1 a2'
+      'b1 b1';
+    grid-template-columns: 1fr 1fr;
+    min-height: 315px;
+    min-width: 800px;
+    padding: 30px 45px;
+    font-family: 'Jost';
+
+    &.only_left_template {
+      grid-template-areas: 'a1';
+      grid-template-columns: none;
+      min-width: 400px;
+    }
+
+    &.no_bottom_template {
+      grid-template-areas: 'a1 a2';
+    }
+
+    &.no_right_template {
+      grid-template-areas:
+        'a1'
+        'b1';
+    }
+
+    &.dark {
+      background: #1b1b1b;
+      color: #fff;
+    }
+
+    &.white {
+      background: #fff;
+      color: #1b1b1b;
+    }
+
+    .area {
+      &.left {
+        grid-area: a1;
+        font-size: 44px;
+        line-height: 46px;
+        font-weight: bold;
+      }
+
+      &.right {
+        grid-area: a2;
+        display: flex;
+        font-size: 32px;
+        line-height: 46px;
+
+        .separator {
+          margin-right: 30px;
+          height: 100%;
+          width: 1px;
+          background: #818181;
+        }
+      }
+
+      &.bottom {
+        grid-area: b1;
+        font-size: 32px;
+        line-height: 46px;
+        font-weight: normal;
+
+        .separator {
+          margin: 30px 0;
+          height: 1px;
+          width: 100%;
+          background: #818181;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1280px) {
+    .content.small {
+      grid-template-areas:
+        'a1'
+        'a2';
+      grid-template-columns: none;
+      min-width: 400px;
+
+      &.only_left_template {
+        grid-template-areas: 'a1';
+      }
+
+      .area {
+        &.left {
+          min-height: 100px;
+        }
+
+        &.right {
+          margin-left: 0;
+          flex-direction: column;
+
+          .separator {
+            margin: 0;
+            margin-bottom: 30px;
+            height: 1px;
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .hide_s {
+      display: none;
+    }
+  }
+}

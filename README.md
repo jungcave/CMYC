@@ -1,46 +1,51 @@
-# Getting Started with Create React App
+# CMYC Market (prototype)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## RU
 
-## Available Scripts
+### Руководство по сборке на персональной машине:
 
-In the project directory, you can run:
+1. Скачайте ZIP архив репозитория Github (CMYC-main.zip) и распакуйте его;
+2. Запустите терминал от распакованной папки проекта:
 
-### `npm start`
+- MAC: CMYC-main > RMB > New Terminal At Folder
+- WIN: Windows File Explorer > CMYC-main > Shift RMB > Open In Terminal
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+3. Проверьте, что у вас на компьютере установлен сборщик Node.js запустив комманду:
+   npm -v
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- если терминал не показал номер версии - скачайте и установите Node.js (https://nodejs.org/en/download)
 
-### `npm test`
+4. Установите пакеты зависимостей, чтобы запустить проект:
+   npm i
+5. Запустите проект:
+   npm start
+6. Откройте проект в браузере (Chrome) по адресу http://localhost:3000/
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Руководство для разработчка:
 
-### `npm run build`
+ACOLPA
+алтернативный FSD метод структурирования компонентных папок в проекте
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ACOLPA - это аббревеатура из букв корневых папок и корневого файла, содержащих компоненты приложения: Aux Common cOmplex Layouts Pages App.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Методология ACOLPA, как и FSD, соблюдает иерархию импортов компонентов из других папок, но иерархия папок, в отличает от FSD, упрощена. 
+Иерархия подразумевает, что компонент может импортировать только из папок ниже по иерархии, где pages-компоненты имеют наивысшую иерарххию, а aux-компоненты - наинизшую.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Все компоненты в проекте распределются по пяти папкам:
+/src
+  /components
+    /aux (вспомогательный)
+    /common (общий)
+    /complex (сложный)
+    /layouts (лэйауты)
+    /pages (страницы)
+    App
 
-### `npm run eject`
+Логика папок ACOLPA по возрастанию иерархии:
+1. aux (вспомогательный) - содержит самые простые утилитарные компоненты (Icon, Motion,..), которые не импортируют из других папок; содержит подпапки по логическому разделению
+2. common (общий) - содержит простые компоненты (Card, Input,..), которые не могут импортировать компоненты из других папок, кроме себя самой и aux-компонентов;
+3. complex (сложный) - содержит составные компоненты (Navbar, Form,..), которые могут состоят из common-компонентов и aux-компонентов
+4. layouts (лэйауты) - содержит компоненты-обертки, которые имеют некоторые общие элементы при изменяющемся контенте (children); хотя layout-компоненты могут обарачивать page-компоненты, они не импортируют их напрямую, а получают только в качестве пропсов
+5. pages (страницы) - содержит компоненты страниц (LandingPage, UserPage,..), которые состоят и импортируют компоненты из всех других папок
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+App - корневой файл, точка входа, основной компонент приложения. В app-файле реализуется маршрутизация страниц и импотрируются общие store-провайдеры.

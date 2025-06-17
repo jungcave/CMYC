@@ -1,0 +1,73 @@
+.tabs {
+  --caret-left: inherit;
+  --caret-width: 0;
+  --transition-time: 0.6s;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  .caret {
+    position: absolute;
+    z-index: 0;
+    bottom: -3px;
+    left: var(--caret-left);
+    height: 100%;
+    width: var(--caret-width);
+    background: black;
+    border-radius: 15px;
+    transform: scale(1.3) translateY(-1px);
+
+    transition: left var(--transition-time) ease;
+  }
+}
+
+.tab {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  font-family: 'Montserrat';
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  cursor: pointer;
+  user-select: none;
+
+  &.active {
+    color: blue;
+    animation: frame-active-color var(--transition-time) ease-in-out 0s both;
+  }
+
+  &:not(.active) a:hover {
+    background: linear-gradient(90deg, cyan, magenta 33%, yellow 66%, cyan 100%);
+    background-size: 200% 200%;
+    background-clip: text;
+    color: transparent;
+    transition: color 1s ease 1s;
+    animation: frame-gradient-position 2s linear 1s both infinite reverse;
+  }
+}
+
+@keyframes frame-active-color {
+  to {
+    color: white;
+  }
+}
+
+@keyframes frame-gradient-position {
+  0% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 100% 0%;
+  }
+  50% {
+    background-position: 150% 0%;
+  }
+  100% {
+    background-position: 200% 0%;
+  }
+}

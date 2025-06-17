@@ -1,0 +1,37 @@
+.checker {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  line-height: 40px;
+  user-select: none;
+
+  .input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    cursor: pointer;
+    transition: background 0.1s ease-in;
+
+    i {
+      position: absolute;
+      opacity: 0;
+      font-size: 0px;
+      transition: opacity 0.1s ease-in;
+    }
+
+    &.checked {
+      background: #010ffe;
+
+      i {
+        position: static;
+        opacity: 1;
+        font-size: 12px;
+      }
+    }
+  }
+}

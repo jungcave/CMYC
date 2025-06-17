@@ -1,0 +1,43 @@
+.card {
+  background: blue;
+  position: relative;
+  overflow: hidden;
+  height: 650px;
+  width: 400px;
+  border-radius: 30px;
+  box-shadow: /*x*/0 /*y*/4px /*spr*/20px /*sld*/0 rgba(0, 0, 0, .2);
+  transition: transform .1s ease-in;
+
+  &.hovered {
+    z-index: 1;
+    transform: scale(1.01);
+    
+    .overlay {
+      background: rgba(0, 0, 0, 0.75);
+    }
+  }
+
+  .image {
+    position: absolute;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .overlay {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.2s ease-out 0s;
+
+    .content {
+      color: #fff;
+    }
+  }
+}

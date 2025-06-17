@@ -1,0 +1,97 @@
+.work_page {
+  margin-bottom: 15px;
+
+  .work_card {
+    :global {
+      .grid-card-content {
+        padding: 45px;
+      }
+    }
+
+    .cell {
+      width: 100%;
+
+      .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+
+        i {
+          margin-right: 30px;
+          font-size: 20px;
+          line-height: 20px;
+        }
+      }
+    }
+
+    .wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .offer_cards {
+        position: relative;
+
+        @for $n from 1 through 99 {
+          :global(.card-#{$n}) {
+            z-index: calc(100 - $n);
+            left: calc(calc($n - 1) * 40px);
+            filter: brightness(calc(1 - $n * 0.1));
+          }
+        }
+
+        .offer_card {
+          padding: 10px 20px;
+
+          &:first-of-type {
+            position: relative;
+            z-index: 100;
+            left: 0;
+          }
+
+          position: absolute;
+          top: 0;
+
+          .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #111;
+            font-size: 22px;
+
+            i {
+              font-size: 22px;
+              transform: rotate(45deg);
+            }
+          }
+
+          .content {
+            margin-bottom: 12px;
+            font-size: 14px;
+            line-height: 16px;
+            color: #ababab;
+          }
+
+          .footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 16px;
+            line-height: 20px;
+
+            .price {
+              color: #000fff;
+            }
+          }
+        }
+      }
+
+      .vertical_button {
+        position: relative;
+        left: 10px;
+        width: 220px;
+      }
+    }
+  }
+}

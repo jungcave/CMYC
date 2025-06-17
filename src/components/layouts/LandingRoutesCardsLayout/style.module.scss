@@ -1,0 +1,84 @@
+.landing_routes_cards_layout {
+  padding: 50px 30px;
+
+  .tabs_wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .content {
+    margin-top: 52px;
+    /* display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 15px; */
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+
+    .cards_layout {
+      display: contents;
+
+      .cards {
+        /* justify-self: right; */
+        text-align: right;
+        column-count: 2; /* https://stackoverflow.com/questions/37831506/grid-view-same-width-different-heights-3-columns-css */
+        width: min-content;
+
+        & > * {
+          display: inline-block;
+          text-align: left;
+          vertical-align: top;
+          margin-bottom: 15px;
+        }
+
+        @media /* to */ (max-width: 1720px) {
+          column-count: 1;
+        }
+      }
+
+      .cards_wrapper .cards {
+        column-count: 2;
+
+        @media /* to */ (max-width: 1280px) {
+          column-count: 1;
+        }
+      }
+    }
+  }
+}
+
+// Fixes loses styles when reusing CardsLayout
+// TODO: why styles loose
+:global {
+  .cards-layout {
+    display: contents;
+
+    .cards-layout-cards {
+      text-align: right;
+      column-count: 2;
+      width: min-content;
+
+      & > * {
+        display: inline-block;
+        text-align: left;
+        vertical-align: top;
+        margin-bottom: 15px;
+      }
+
+      @media /* to */ (max-width: 1720px) {
+        column-count: 1;
+      }
+    }
+
+    .cards-layout-cards-wrapper .cards-layout-cards {
+      column-count: 2;
+
+      @media /* to */ (max-width: 1280px) {
+        column-count: 1;
+      }
+    }
+  }
+}

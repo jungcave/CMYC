@@ -1,0 +1,122 @@
+/* @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Jost&display=swap'); */
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  height: 100%;
+}
+
+section {
+  min-height: 85vh;
+}
+
+ul {
+  list-style: none;
+}
+
+icon {
+  user-select: none;
+}
+
+a,
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  padding: 2px 4px;
+  border-radius: 100vh;
+  border-color: #ccc;
+  user-select: none;
+  cursor: pointer;
+}
+
+input,
+input:hover,
+input:focus {
+  padding: 2px 4px;
+  border-radius: 100vh;
+  border-color: #ccc;
+  outline: none;
+}
+
+textarea {
+  resize: none;
+}
+
+img {
+  width: fit-content;
+  object-position: center;
+  object-fit: contain;
+}
+
+.hidden {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.invisible {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.height-100pc {
+  height: 100%;
+}
+
+.row {
+  display: flex;
+}
+
+.row.col {
+  flex-direction: column;
+}
+
+.row.center {
+  align-items: center;
+  justify-content: center;
+}
+
+.row.align-center {
+  align-items: center;
+}
+
+.row.justify-center {
+  justify-content: center;
+}
+
+.row.align-between {
+  align-items: space-between;
+}
+
+.row.justify-between {
+  justify-content: space-between;
+}
+
+.row.gap-10 {
+  gap: 10px;
+}
+
+.row.gap-20 {
+  gap: 20px;
+}
+
+.row.gap-30 {
+  gap: 30px;
+}
+
+.row .push-right {
+  margin-left: auto;
+  margin-right: 0;
+}

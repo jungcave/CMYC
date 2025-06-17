@@ -1,0 +1,190 @@
+{
+  "searchOptions": [
+    {"label": "Картины", "value": "paintings"},
+    {"label": "3d арт", "value": "3d"},
+    {"label": "Дизайн", "value": "design"},
+    {"label": "Техника", "value": "tech"},
+    {"label": "Другое", "value": "other"}
+  ],
+  "tabOptions": [
+    {"label": "Главная", "value": "home"},
+    {"label": "Обучение", "value": "education"},
+    {"label": "События", "value": "events"},
+    {"label": "Работа", "value": "work"},
+    {"label": "Товары", "value": "products"},
+    {"label": "Искусство", "value": "art"}
+  ],
+  "cards": [
+    {
+      "id": 0,
+      "userId": 0,
+      "imagePath": "/images/cards/card0.png",
+      "url": "https://id.pinterest.com",
+      "tag": "",
+      "dummy": true
+    },
+    {
+      "id": 1,
+      "userId": 1,
+      "userName": "Jane Dark",
+      "imagePath": "/images/cards/card1.png",
+      "url": "https://id.pinterest.com",
+      "tag": "paintings"
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "userName": "John Daw",
+      "imagePath": "/images/cards/card2.png",
+      "cardHeight": "775px",
+      "url": "https://id.pinterest.com",
+      "tag": "3d"
+    },
+    {
+      "id": 3,
+      "userId": 2,
+      "userName": "John Daw",
+      "imagePath": "/images/cards/card3.png",
+      "cardHeight": "425px",
+      "url": "https://id.pinterest.com",
+      "product": {
+        "name": "Product Name",
+        "desc": "Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков",
+        "price": 36900
+      },
+      "tag": "tech"
+    },
+    {
+      "id": 4,
+      "userId": 2,
+      "userName": "John Daw",
+      "imagePath": "/images/cards/card4.png",
+      "cardHeight": "605px",
+      "url": "https://id.pinterest.com",
+      "tag": "3d design tech"
+    },
+    {
+      "id": 5,
+      "userId": 1,
+      "userName": "Jane Dark",
+      "imagePath": "/images/cards/card5.png",
+      "cardHeight": "335px",
+      "url": "https://id.pinterest.com",
+      "tag": "design"
+    },
+    {
+      "id": 6,
+      "userId": 2,
+      "userName": "John Daw",
+      "imagePath": "/images/cards/card6.png",
+      "cardHeight": "315px",
+      "url": "https://id.pinterest.com"
+    },
+    {
+      "id": 7,
+      "userId": 1,
+      "userName": "Jane Dark",
+      "imagePath": "/images/cards/card7.png",
+      "cardHeight": "830px",
+      "url": "https://id.pinterest.com",
+      "product": {
+        "name": "Product Name",
+        "desc": "Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков",
+        "price": 36900
+      },
+      "tag": "tech"
+    },
+    {
+      "id": 8,
+      "userId": 2,
+      "userName": "John Daw",
+      "imagePath": "/images/cards/card8.png",
+      "cardHeight": "565px",
+      "url": "https://id.pinterest.com",
+      "tag": "tech other"
+    },
+    {
+      "id": 9,
+      "userId": 1,
+      "userName": "Jane Dark",
+      "imagePath": "/images/cards/card9.png",
+      "url": "https://id.pinterest.com",
+      "tag": "3d other"
+    },
+    {
+      "id": 10,
+      "userId": 1,
+      "userName": "Jane Dark",
+      "imagePath": "/images/cards/card10.png",
+      "url": "https://id.pinterest.com",
+      "tag": "3d"
+    },
+    {
+      "id": 11,
+      "userId": 2,
+      "userName": "John Daw",
+      "imagePath": "/images/cards/card11.png",
+      "url": "https://id.pinterest.com",
+      "tag": "paintings"
+    }
+  ],
+  "cardLayouts": {
+    "baseCardLayoutIds": [1, 3, 2, 4],
+    "sectionCardLayoutIds": [5, 6, 7, 9, 8],
+    "lastInLayoutIdx": 9
+  },
+  "users": [
+    {
+      "id": 1,
+      "name": "Jane Dark",
+      "mainImage": "/images/cards/card1.png",
+      "info": {
+        "motto": "Lorem Ipsum",
+        "statement": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness."
+      },
+      "comments": [
+        {
+          "userName": "Jaydon Ekstrom Bothman",
+          "userIcon": "/images/avatars/ava01.png",
+          "text": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness."
+        },
+        {
+          "userName": "Ruben Carder",
+          "userIcon": "/images/avatars/ava02.png",
+          "text": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness."
+        },
+        {
+          "userName": "Alfredo",
+          "userIcon": "/images/avatars/ava03.png",
+          "text": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness."
+        },
+        {
+          "userName": "Guest",
+          "text": "No pain - no gain, bro."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "John Daw",
+      "mainImage": "/images/cards/card2.png",
+      "info": {
+        "statement": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness."
+      },
+      "comments": [
+        {
+          "userName": "Jaydon Ekstrom Bothman",
+          "userIcon": "/images/avatars/ava01.png",
+          "text": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness."
+        }
+      ]
+    }
+  ],
+  "libraryItems": [
+    {"imagePath": "/images/carousel/01.png"},
+    {"imagePath": "/images/carousel/02.png"},
+    {"imagePath": "/images/carousel/03.png"},
+    {"imagePath": "/images/carousel/04.png"},
+    {"imagePath": "/images/carousel/05.png"}
+  ]
+}

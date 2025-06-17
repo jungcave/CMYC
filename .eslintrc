@@ -1,0 +1,30 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "plugins": ["react-hooks", "@typescript-eslint", "unused-imports"],
+  "rules": {
+    "indent": ["error", 2, {"SwitchCase": 1}],
+    "no-extra-semi": "warn",
+    "no-empty-pattern": "warn",
+    "no-empty-function": "off",
+    "jsx-a11y/alt-text": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "unused-imports/no-unused-imports": "warn",
+    "unused-imports/no-unused-vars": "warn"
+  },
+  "globals": {
+    "window": true,
+    "document": true,
+    "console": true,
+    "setTimeout": true,
+    "setInterval": true,
+    "clearTimeout": true,
+    "clearInterval": true,
+    "URLSearchParams": true,
+    "StorageEvent": true
+  }
+}

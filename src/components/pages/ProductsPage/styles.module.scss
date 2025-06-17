@@ -1,0 +1,39 @@
+.products_page {
+  :global {
+    .grid-card {
+      margin-bottom: 15px;
+      
+      .grid-card-content {
+        position: relative;
+        min-height: unset;
+      }
+
+      :local {
+        .card_left {
+          justify-content: space-between;
+          gap: 10px;
+
+          .icon_left {
+            position: relative;
+            top: 3px;
+            right: 0;
+
+            @media (min-width: 1280px) {
+              padding-right: 30px;
+            }
+          }
+        }
+        .card_right {
+          position: relative;
+          top: 10px;
+
+          span {
+            position: absolute;
+            top: -40px;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}

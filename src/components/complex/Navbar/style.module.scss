@@ -1,0 +1,72 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 20px;
+  border-bottom: 1px solid black;
+
+  .logo_icon {
+    grid-area: a1;
+
+    :global {
+      svg {
+        path,
+        circle {
+          transition: fill 2s linear 0s;
+        }
+      }
+    }
+  }
+
+  .search_dropdown {
+    grid-area: a2;
+
+    :global {
+      .input-field input {
+        min-width: 600px;
+      }
+    }
+  }
+
+  .right {
+    grid-area: a3;
+    margin-left: auto;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    :global {
+      .fa-user-circle {
+        transform: scale(2);
+      }
+    }
+  }
+}
+
+/* L (iPad Pro 10.5, Pro 12.9) */
+@media (max-width: 1048px) {
+  .navbar {
+    display: grid;
+    grid-template-areas:
+      'a1 a3'
+      'a2 a2';
+    gap: 10px;
+
+    .search_dropdown {
+      :global {
+        .input-field {
+          width: 100%;
+
+          input {
+            min-width: unset;
+          }
+        }
+      }
+    }
+
+    &.invisible_search {
+      display: flex;
+    }
+  }
+}

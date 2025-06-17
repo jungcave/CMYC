@@ -1,0 +1,121 @@
+.calendar {
+  background: white;
+  overflow: hidden;
+  position: relative;
+  height: 610px;
+  width: 400px;
+  padding: 30px 45px;
+  border-radius: 30px;
+  box-shadow: /*x*/ 0 /*y*/ 4px /*spr*/ 20px /*sld*/ 0 rgba(0, 0, 0, 0.2);
+  font-family: 'Jost';
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+
+    .title {
+      font-size: 44px;
+      font-weight: bold;
+    }
+
+    .icon_ticket {
+      position: relative;
+      top: 5px;
+    }
+  }
+
+  .controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
+  .days_wrapper {
+    position: relative;
+    height: 180px;
+
+    .days_table {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      justify-items: center;
+      row-gap: 8px;
+      width: 100%;
+
+      .day {
+        --fontSize: 20px;
+        position: relative;
+        font-size: var(--fontSize);
+        cursor: pointer;
+
+        &.weekend {
+          color: blue;
+          font-weight: bold;
+        }
+
+        &.active {
+          .number {
+            position: relative;
+            z-index: 1;
+            color: #fff;
+          }
+
+          &:after {
+            --size: 30px;
+
+            content: '';
+            position: absolute;
+            z-index: 0;
+            left: calc(50% - var(--size) / 2);
+            top: calc(50% - var(--size) / 2);
+            background: blue;
+            width: var(--size);
+            height: var(--size);
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+
+  .separator {
+    height: 1px;
+    width: 100%;
+    margin: 30px 0;
+    background: #c6c6c6;
+  }
+
+  .event_section {
+    .title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      .circle {
+        --size: 10px;
+
+        content: '';
+        z-index: 0;
+        left: calc(50% - var(--size) / 2);
+        top: calc(50% - var(--size) / 2);
+        background: blue;
+        width: var(--size);
+        height: var(--size);
+        border-radius: 50%;
+      }
+
+      h2 {
+        font-family: 'Jost';
+        font-size: 28px;
+        font-weight: lighter;
+      }
+    }
+
+    .events {
+      margin-top: 10px;
+      color: gray;
+    }
+  }
+}

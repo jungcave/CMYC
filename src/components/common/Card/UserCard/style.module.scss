@@ -1,0 +1,43 @@
+.user_card {
+  padding: 30px 20px;
+  opacity: 0;
+  transition: opacity 0.2 ease-out;
+
+  :global {
+    .fa-circle {
+      margin-left: 10px;
+      transform: scale(3);
+    }
+  }
+
+  .name {
+    margin-left: 10px;
+    font-family: 'Jost';
+    font-size: 24px;
+  }
+
+  :global {
+    .fa-comment,
+    fa-ellipsis-h {
+      transform: scale(2);
+    }
+  }
+
+  .product {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+    font-family: 'Montserrat';
+  }
+
+  .url {
+    margin-top: 10px;
+    font-family: 'Montserrat';
+    font-size: 14px;
+  }
+
+  &.hovered {
+    opacity: 1;
+  }
+}

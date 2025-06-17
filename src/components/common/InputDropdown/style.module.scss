@@ -1,0 +1,100 @@
+.dropdown {
+  visibility: visible;
+  position: relative;
+  z-index: 100;
+
+  :global {
+    .invisible {
+      visibility: hidden;
+    }
+  }
+
+  &.no_caret {
+    :global {
+      .input-field input {
+        caret-color: transparent;
+      }
+    }
+  }
+
+  .options {
+    position: absolute;
+    width: 100%;
+
+    .option {
+      background: white;
+      padding: 15px 32px;
+      font-family: 'Montserrat';
+
+      &.active {
+        background: #eee;
+      }
+
+      &.last {
+        padding-bottom: 25px;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+      }
+
+      &:not(.active):hover {
+        background: #f7f7f7;
+      }
+    }
+  }
+
+  &.opened {
+    :global {
+      .input-field {
+        border-bottom: none;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+
+    .options {
+      border: 1px solid #c2c2c2;
+      border-top: none;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      box-shadow: /*x*/ 0 /*y*/ 2px /*spr*/ 5px /*sld*/ 0 rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+
+.dropdown.picker {
+  :global {
+    .input-field {
+      padding: 0;
+      padding-bottom: 7px;
+      border: none;
+      box-shadow: none;
+      border-radius: 0;
+
+      input {
+        min-width: auto;
+        font-family: 'Jost';
+        font-weight: bold;
+        caret-color: transparent;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &.opened {
+    .options {
+      border: none;
+      border-radius: 0;
+
+      .option {
+        border-radius: 0;
+      }
+    }
+  }
+
+  .options {
+    .option {
+      padding: 6px 0;
+      padding-left: 7px;
+    }
+  }
+}
